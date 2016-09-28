@@ -4,25 +4,35 @@ class Person
   def initialize(name, age)
     @name = name
     @age = age
+    @nickname = name[0..3]
   end
 
   def nickname
     # YOUR IMPLEMENTATION HERE
-    'nickname'
+    return @nickname
   end
 
   def birth_year
     # YOUR IMPLEMENTATION HERE
-    1990
+    return 2016 - age.to_i
   end
 
   def introduction
     # YOUR IMPLEMENTATION HERE
-    'introduce'
+    s = name.to_s
+    s << age.to_s
+    return s
   end
 
   def fib_number
     # YOUR IMPLMENTATION HERE
-    0
+    def fib(x)
+        if x <= 1
+            return x
+        else
+            return fib(x-2) + fib(x-1)
+        end
+    end
+    return fib(age.to_i)
   end
 end
